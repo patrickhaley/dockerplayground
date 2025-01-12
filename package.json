@@ -1,0 +1,16 @@
+{
+  "name": "docker-dev-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "start:staging": "node index.js",
+    "start:prod": "node index.js",
+    "docker:dev": "sh scripts/dev.sh",
+    "docker:staging": "sh scripts/staging.sh",
+    "docker:prod": "sh scripts/prod.sh"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+} 
