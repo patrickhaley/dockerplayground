@@ -5,7 +5,7 @@ COPY package*.json ./
 
 # Development stage
 FROM base AS development
-RUN npm install
+RUN npm install --include=dev
 COPY . .
 EXPOSE 3000
 CMD ["npm", "run", "start"]
