@@ -1,21 +1,9 @@
 services:
   app:
     container_name: app-prod
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: production
+    image: ${DOCKER_REPOSITORY}:${IMAGE_TAG:-latest}
     ports:
       - "3000:3000"
     env_file:
       - .env.production
     restart: always
-    # Remove volumes in production
-    # Add any production-specific configurations
-    deploy:
-      replicas: 2
-      update_config:
-        parallelism: 1
-        delay: 10s
-      restart_policy:
-        condition: on-failure 
