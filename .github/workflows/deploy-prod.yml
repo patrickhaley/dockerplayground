@@ -51,4 +51,4 @@ jobs:
 
       - name: Update ECS service
         run: |
-          aws ecs update-service --cluster dockerplayground --service dockerplayground --force-new-deployment 
+          aws ecs update-service --cluster dockerplayground --service dockerplayground-service --force-new-deployment 
