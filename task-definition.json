@@ -9,6 +9,7 @@
     {
       "name": "app",
       "image": "587341827348.dkr.ecr.us-east-1.amazonaws.com/dockerplayground:latest",
+      "essential": true,
       "portMappings": [
         {
           "containerPort": 3000,
