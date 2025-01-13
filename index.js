@@ -4,18 +4,13 @@ const port = process.env.PORT || 3000;
 
 // Add health check endpoint
 app.get('/health', (req, res) => {
-  res.json({
-    status: 'healthy',
-    timestamp: new Date(),
-    environment: process.env.NODE_ENV
-  });
+  res.status(200).json({ status: 'healthy' });
 });
 
 app.get('/', (req, res) => {
-  res.send(`Hello from ${process.env.NODE_ENV} environment!`);
+  res.send('Hello from ECR!');
 });
 
-app.listen(port, () => {
-  console.log(`App running in ${process.env.NODE_ENV} mode at http://localhost:${port}`);
-  console.log(`API URL: ${process.env.API_URL}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`App running in production mode at http://0.0.0.0:${port}`);
 }); 
