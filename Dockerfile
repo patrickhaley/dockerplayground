@@ -2,6 +2,7 @@
 FROM node:18-alpine AS base
 WORKDIR /app
 COPY package*.json ./
+RUN apk add --no-cache curl
 
 # Development stage
 FROM base AS development
